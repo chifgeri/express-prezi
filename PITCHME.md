@@ -135,7 +135,7 @@ Kód
 
 ## Perzisztens adattárolás MongoDB-vel
 
-![mongo](assets/image/mongo.png)
+![mongo](assets/images/mongo.png)
 
 ---
 
