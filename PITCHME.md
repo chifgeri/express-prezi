@@ -68,7 +68,7 @@ app.get('/user/:id', middlewareA(), middlewareB());
 app.post('/user', middlewareB());
 app.delete('/user/:id', middlewareA(), middlewareB());
 
- ```
+```
 
 @[1](Összes kérés beárkezik)
 @[3-5](Csak a megfelelő kérés érkezésekor reagál)
