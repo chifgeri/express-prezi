@@ -11,7 +11,7 @@
 
 ---
 
-@snap[span-100]
+@snap[span-50]
 ![node](assets/images/nodejs.svg)
 @snapend
 
@@ -57,22 +57,21 @@ app.listen(port, () => console.log(`Example app listening on port ${port}!`))
 
 @[1,2]
 @[3]
-@[4]
+@[5]
 
 +++
 
 ```js
-    app.use('/user', middlewareA(), 
-            (req, resp, next) =>{ });
+app.use('/user', middlewareA(), (req, resp, next) =>{ });
 
-    app.get('/user/:id', middlewareA(), middlewareB());
-    app.post('/user', middlewareB());
-    app.delete('/user/:id', middlewareA(), middlewareB());
+app.get('/user/:id', middlewareA(), middlewareB());
+app.post('/user', middlewareB());
+app.delete('/user/:id', middlewareA(), middlewareB());
 
  ```
 
-@[1]
-@[3-5]
+@[1](Összes kérés beárkezik)
+@[3-5](Csak a megfelelő kérés érkezésekor reagál)
 
 ---
 
