@@ -84,7 +84,7 @@ app.delete('/user/:id', middlewareA(), middlewareB());
 
 +++
 
-### Request objektum
+#### Request objektum
 
 ```js
 const bodyParser = require('body-parser')
@@ -135,7 +135,7 @@ Kód
 
 ## Perzisztens adattárolás MongoDB-vel
 
-![mongo](assets/image/mongo)
+![mongo](assets/image/mongo.png)
 
 ---
 
