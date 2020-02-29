@@ -46,19 +46,18 @@ A legnépszerűbb Node alapú backend keretrendszer
 
 +++
 
-```js
-    
-    const express = require('express')
-    const app = express()
-    const port = 3000
+```js 
+const express = require('express')
+const app = express()
+const port = 3000
 
-    app.listen(port, () => console.log(`Example app listening on port ${port}!`))
+app.listen(port, () => console.log(`Example app listening on port ${port}!`))
 
- ```
+```
 
 @[1,2]
 @[3]
-@[4,6]
+@[4]
 
 +++
 
