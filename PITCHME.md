@@ -15,6 +15,10 @@
 ![node](assets/images/nodejs.svg)
 @snapend
 
++++
+
+![nodememe](assets/images/nodememe.png)
+
 ---
 
 ## A Node futtatókörnyezet
@@ -29,20 +33,20 @@
 
 --- 
 
-# Express
+## Express
 A legnépszerűbb Node alapú backend keretrendszer
 
 ---
 
-## Egyszerű, gyors és skálázható webalkalmazások
+### Egyszerű, gyors és skálázható webalkalmazások
 
-### Fő építő elemei:
+#### Fő építő elemei:
  - Útvonal választás
  - Middleware függvények
 
 --- 
 
-## App objektum és a routing
+### App objektum és a routing
 
 +++
 
@@ -69,9 +73,10 @@ app.post('/user', middlewareB());
 app.delete('/user/:id', middlewareA(), middlewareB());
 
 ```
-
-@[1](Összes kérés beárkezik)
-@[3-5](Csak a megfelelő kérés érkezésekor reagál)
+@snap[south]
+@[1](Összes kérés beérkezik, ami az URL-re illeszkedik)
+@[3-5](Csak a megfelelő kérés beérkezésekor reagál)
+@snapend
 
 ---
 
@@ -81,7 +86,32 @@ app.delete('/user/:id', middlewareA(), middlewareB());
 
 ### Request objektum
 
-kód
+```js
+const bodyParser = require('body-parser')
+// for parsing application/json
+app.use(bodyParser.json()) 
+
+...
+
+//Valami middleware
+(req, res, next) => {
+    const formData = req.body;
+    const userid = req.params.id;
+    const path = req.path;
+    const colorQuery = req.query.color;
+    console.log(req.method);
+}
+```
+
+@snap[south]
+@[1-3](Body-parser kell a HTTP body eléréséhez)
+@[7-14]
+@[9](Body-ban található JSON adatok)
+@[10](Url paraméterek itt pl. user/:id)
+@[11](Relative elérési út)
+@[12](Query paraméterek pl. ?color=black)
+@[13](A kérés HTTP metódusa)
+@snapend
 
 +++
 
@@ -104,6 +134,8 @@ Kód
 ---
 
 ## Perzisztens adattárolás MongoDB-vel
+
+![mongo](assets/image/mongo)
 
 ---
 
