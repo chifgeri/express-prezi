@@ -11,7 +11,7 @@
 
 ---
 
-@snap[span-50]
+@snap[midpoint span-50]
 ![node](assets/images/nodejs.svg)
 @snapend
 
