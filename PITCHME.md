@@ -11,28 +11,30 @@
 
 ---
 
+@snap(span-100)
 ![node](assets/images/nodejs.svg)
+@snapend
 
 ---
-
 
 ## A Node futtatókörnyezet
 
 @ul[list-square-bullets list-spaced-bullets font-righteous]
 * Nem backend keretrendszer
+* Inkább szerver oldali platform
 * Webszerverek kiszolgálására
-* JavaScriptet futtat
 * V8 motor
-* Eventek és aszinkron IO
+* Event-loop és aszinkron I/O
 @ulend
+
 --- 
 
 # Express
-A legnépszerűbb Node backend keretrendszer
+A legnépszerűbb Node alapú backend keretrendszer
 
 ---
 
-## Egyszerű. gyors és skálázható webalkalmazások
+## Egyszerű, gyors és skálázható webalkalmazások
 
 ### Fő építő elemei:
  - Útvonal választás
@@ -40,11 +42,11 @@ A legnépszerűbb Node backend keretrendszer
 
 --- 
 
-  App objektum és a routing
+## App objektum és a routing
 
 +++
 
- ```js
+```js
     
     const express = require('express')
     const app = express()
@@ -54,33 +56,48 @@ A legnépszerűbb Node backend keretrendszer
 
  ```
 
-    @[1,2]
-    @[3]
-    @[4,6]
-
----
-
-Middlewarek
+@[1,2]
+@[3]
+@[4,6]
 
 +++
 
-Request objektum
+```js
+    app.use('/user', middlewareA(), 
+            (req, resp, next) =>{ });
+
+    app.get('/user/:id', middlewareA(), middlewareB());
+    app.post('/user', middlewareB());
+    app.delete('/user/:id', middlewareA(), middlewareB());
+
+ ```
+
+@[1]
+@[3-5]
+
+---
+
+## Middlewarek
+
++++
+
+### Request objektum
 
 kód
 
 +++
 
-Response objektum
+### Response objektum
 
 kód
 
 +++
 
-A next() függvény
+### A next() függvény
 
 ---
 
-Hibakezelés
+### Hibakezelés
 
 +++
 
@@ -88,21 +105,25 @@ Kód
 
 ---
 
-Perzisztens adattárolás MongoDB-vel
+## Perzisztens adattárolás MongoDB-vel
 
 ---
 
+@ul
+- NoSQL adatbázis
 - JSON dokumentumok tárolása
 - Struktúrálatlan adatok
 - Nincs validáció
-
+@ulend
 ---
 
-Mongoose package
+### Mongoose package
 
+@ul
 - ODM könyvtár
 - JavaScript objektumok mappelése
 - MongoDB kezelése
+@ulend
 
 +++
 
