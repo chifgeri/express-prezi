@@ -1,15 +1,15 @@
 h2 {
-    font-size: 150%;
-    padding-bottom: 1.5em;
+    font-size: 150% !important;
+    padding-bottom: 1.5em !important;
 }
 
 h3 {
-    font-size: 125%;
-    padding-bottom: 1.25em;
+    font-size: 125% !important;
+    padding-bottom: 1.25em !important;
 }
 h4 {
-    font-size: 110%;
-    padding-bottom: 1em;
+    font-size: 110% !important;
+    padding-bottom: 1em !important;
 }
 
 
