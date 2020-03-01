@@ -54,7 +54,7 @@ A legnépszerűbb Node alapú backend keretrendszer
 
 +++
 @snap[north snap-40]
-## A szerver indítása
+### A szerver indítása
 @snapend
 
 ```js 
@@ -101,7 +101,7 @@ app.delete('/user/:id', middlewareA(), middlewareB());
 @ulend
 +++
 @snap[north snap-40]
-## Request
+### Request
 @snapend
 
 ```js
@@ -135,7 +135,7 @@ const myMiddleware = (req, res, next) => {
 
 +++
 @snap[north snap-40]
-## Response
+### Response
 @snapend
 
 ```js
@@ -165,7 +165,7 @@ const myMiddleware = (req, res, next) => {
 
 ---
 @snap[north snap-40]
-## Hibakezelés
+### Hibakezelés
 @snapend
 ```js
 const myMiddleware = (err, req, res, next) => {
@@ -214,7 +214,7 @@ const myMiddleware = (err, req, res, next) => {
 +++
 
 @snap[north snap-40]
-## Kapcsolódás
+### Kapcsolódás
 @snapend
 
 ```js
@@ -226,7 +226,7 @@ mongoose.connect('mongodb://localhost:27017/test',
 
 +++
 @snap[north snap-40]
-## Séma és modell
+### Séma és modell
 @snapend
 ```js
 import mongoose from 'mongoose';
@@ -244,7 +244,7 @@ export default const Cat = mongoose.model('Cat', catSchema);
 
 +++
 @snap[north snap-40]
-## TypeScript + mongoose
+### TypeScript + mongoose
 @snapend
 ```ts
 //TypeScript interface
@@ -263,7 +263,7 @@ export default model<ICat>('Cat', catSchema);
 
 +++
 @snap[north snap-40]
-## Modell használata
+### Modell használata
 @snapend
 ```js
 import Cat from 'models/Cat';
