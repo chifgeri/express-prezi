@@ -167,10 +167,14 @@ const myMiddleware = (req, res, next) => {
 const myMiddleware = (err, req, res, next) => {
     if(err){
         res.status(500);
-        res.send('Hoopsie Woopsie!');
+        res.send('Oopsie Woopsie!');
     }
 }
 ```
+
++++
+
+![oopsie](assets/images/oopsie.png)
 
 ---
 
@@ -199,8 +203,15 @@ const myMiddleware = (err, req, res, next) => {
 - JavaScript objektumok mappelés
 - MongoDB kezelés
 @ulend
++++
+
+![mongoose](assets/images/mongoose.jpg)
 
 +++
+
+@snap[north snap-40]
+### Kapcsolódás
+@snapend
 
 ```js
 const mongoose = require('mongoose');
