@@ -181,7 +181,7 @@ const myMiddleware = (err, req, res, next) => {
 ---
 @snap[north snap-40]
 ### Fő tulajdonságai
-@snap[north snap-40]
+@snapend
 
 @ul[list-square-bullets list-spaced-bullets font-righteous]
 - NoSQL adatbázis
