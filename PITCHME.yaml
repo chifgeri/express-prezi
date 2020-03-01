@@ -1,6 +1,6 @@
 title: "Express conquers the World"
 
-highlight : dracula
+highlight : color-brewer
 code-line-numbers: true
 theme-override : assets/css/PITCHME.css
 transition : fade
