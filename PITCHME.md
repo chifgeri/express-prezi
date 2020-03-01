@@ -283,6 +283,6 @@ const myMiddleware = (err, req, res, next) => {
 
 ---?image=assets/images/question.jpg
 
-@snap[south snap-40]
+@snap[west snap-30]
 ## Kérdések?
 @snapend
