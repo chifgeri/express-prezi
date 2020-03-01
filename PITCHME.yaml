@@ -1,6 +1,6 @@
 title: "Express conquers the World"
 
-highlight : ir-black
-theme : night
+highlight : color-bewer
+code-line-numbers: true
 theme-override : assets/css/PITCHME.css
 transition : fade
