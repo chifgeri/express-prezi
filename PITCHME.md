@@ -1,13 +1,13 @@
 
-# Express**JS**
+![expressjs](assets/images/expressjs.png)
 
 +++
 
-# Express**TS**
+![expressts](assets/images/expressts.png)
 
 ---
 
-![express](assets/images/express-mongo.jpg)
+![express-mongo-node](assets/images/express-mongo.jpg)
 
 ---
 
@@ -50,6 +50,8 @@ A legnépszerűbb Node alapú backend keretrendszer
 
 +++
 
+### A szerver indítása
+
 ```js 
 const express = require('express')
 const app = express()
@@ -64,6 +66,8 @@ app.listen(port, () => console.log(`Example app listening on port ${port}!`))
 @[5]
 
 +++
+
+### Routing
 
 ```js
 app.use('/user', middlewareA(), (req, resp, next) =>{ });
@@ -83,8 +87,15 @@ app.delete('/user/:id', middlewareA(), middlewareB());
 ## Middlewarek
 
 +++
+@ul
+- Egyszerű feladat
+- Kérés és válasz objektumok
+- Láncolható
+- Visszatérhet vagy továbbmehet
+@endul
++++
 
-#### Request objektum
+#### Request
 
 ```js
 const bodyParser = require('body-parser')
@@ -107,17 +118,17 @@ const myMiddleware = (req, res, next) => {
 @snap[south]
 @[1-3](Body-parser kell a HTTP body eléréséhez)
 @[7-14]
-@[9](Body-ban található JSON adatok)
-@[10](Url paraméterek itt pl. user/:id)
-@[11](Relative elérési út)
-@[12](Query paraméterek pl. ?color=black)
-@[13](A kérés HTTP metódusa)
-@[15]
+@[8](Body-ban található JSON adatok)
+@[9](Url paraméterek itt pl. user/:id)
+@[10](Relative elérési út)
+@[11](Query paraméterek pl. ?color=black)
+@[12](A kérés HTTP metódusa)
+@[14]
 @snapend
 
 +++
 
-### Response objektum
+### Response
 
 ```js
 //Valami middleware
@@ -148,9 +159,6 @@ const myMiddleware = (req, res, next) => {
 
 ### Hibakezelés
 
-+++
-
-
 ```js
 const myMiddleware = (err, req, res, next) => {
     if(err){
@@ -168,6 +176,7 @@ const myMiddleware = (err, req, res, next) => {
 
 ---
 
+### Fő tulajdonságai
 @ul
 - NoSQL adatbázis
 - JSON dokumentumok tárolása
@@ -210,8 +219,9 @@ export default const Cat = mongoose.model('Cat', catSchema);
 
 ```
 
-
 +++
+
+### TypeScript + mongoose
 
 ```ts
 //TypeScript interface
@@ -262,5 +272,4 @@ const myMiddleware = (err, req, res, next) => {
 @[4-11]
 @[13-17]
 @[19-23]
----
 
