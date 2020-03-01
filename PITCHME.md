@@ -49,8 +49,9 @@ A legnépszerűbb Node alapú backend keretrendszer
 ### App objektum és a routing
 
 +++
-
+@snap[north snap-40]
 ### A szerver indítása
+@snapend
 
 ```js 
 const express = require('express')
@@ -66,8 +67,9 @@ app.listen(port, () => console.log(`Example app listening on port ${port}!`))
 @[5]
 
 +++
-
+@snap[north snap-40]
 ### Routing
+@snapend
 
 ```js
 app.use('/user', middlewareA(), (req, resp, next) =>{ });
@@ -87,15 +89,16 @@ app.delete('/user/:id', middlewareA(), middlewareB());
 ## Middlewarek
 
 +++
-@ul
+@ul[list-square-bullets list-spaced-bullets font-righteous]
 - Egyszerű feladat
 - Kérés és válasz kezelése
 - Láncolható
 - Visszatérhet vagy továbbmehet
 @ulend
 +++
-
-#### Request
+@snap[north snap-40]
+### Request
+@snapend
 
 ```js
 const bodyParser = require('body-parser')
@@ -127,8 +130,9 @@ const myMiddleware = (req, res, next) => {
 @snapend
 
 +++
-
+@snap[north snap-40]
 ### Response
+@snapend
 
 ```js
 //Valami middleware
@@ -156,9 +160,9 @@ const myMiddleware = (req, res, next) => {
 @snapend
 
 ---
-
+@snap[north snap-40]
 ### Hibakezelés
-
+@snapend
 ```js
 const myMiddleware = (err, req, res, next) => {
     if(err){
@@ -175,19 +179,22 @@ const myMiddleware = (err, req, res, next) => {
 ![mongo](assets/images/mongo.png)
 
 ---
-
+@snap[north snap-40]
 ### Fő tulajdonságai
-@ul
+@snap[north snap-40]
+
+@ul[list-square-bullets list-spaced-bullets font-righteous]
 - NoSQL adatbázis
 - JSON dokumentumok tárolása
 - Struktúrálatlan adatok
 - Nincs validáció
 @ulend
 ---
-
+@snap[north snap-40]
 ### Mongoose package
+@snapend
 
-@ul
+@ul[list-square-bullets list-spaced-bullets font-righteous]
 - ODM könyvtár
 - JavaScript objektumok mappelés
 - MongoDB kezelés
@@ -203,9 +210,9 @@ mongoose.connect('mongodb://localhost:27017/test',
 ```
 
 +++
-
-#### Séma és modell
-
+@snap[north snap-40]
+### Séma és modell
+@snapend
 ```js
 import mongoose from 'mongoose';
 
@@ -221,9 +228,9 @@ export default const Cat = mongoose.model('Cat', catSchema);
 ```
 
 +++
-
+@snap[north snap-40]
 ### TypeScript + mongoose
-
+@snapend
 ```ts
 //TypeScript interface
 import { model, Document } from 'mongoose';
@@ -240,9 +247,9 @@ export default model<ICat>('Cat', catSchema);
 ```
 
 +++
-
-#### Modell használata
-
+@snap[north snap-40]
+### Modell használata
+@snapend
 ```js
 import Cat from 'models/Cat';
 
