@@ -1,6 +1,7 @@
 title: "Express conquers the World"
 
 highlight : color-brewer
+layout: center-left
 code-line-numbers: true
 theme-override : assets/css/PITCHME.css
 transition : fade
