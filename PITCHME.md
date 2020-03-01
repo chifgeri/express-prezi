@@ -89,10 +89,10 @@ app.delete('/user/:id', middlewareA(), middlewareB());
 +++
 @ul
 - Egyszerű feladat
-- Kérés és válasz objektumok
+- Kérés és válasz kezelése
 - Láncolható
 - Visszatérhet vagy továbbmehet
-@endul
+@ulend
 +++
 
 #### Request
@@ -197,8 +197,9 @@ const myMiddleware = (err, req, res, next) => {
 
 ```js
 const mongoose = require('mongoose');
+
 mongoose.connect('mongodb://localhost:27017/test',
-{useNewUrlParser: true, useUnifiedTopology: true});
+                 {useNewUrlParser: true, useUnifiedTopology: true});
 ```
 
 +++
@@ -273,3 +274,8 @@ const myMiddleware = (err, req, res, next) => {
 @[13-17]
 @[19-23]
 
+---?image=assets/img/questions.jpg
+
+@snap[south snap-30]
+## Kérdések?
+@snapend
