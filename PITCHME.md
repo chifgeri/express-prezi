@@ -93,13 +93,14 @@ app.use(bodyParser.json())
 
 ...
 
-//Valami middleware
-(req, res, next) => {
+const myMiddleware = (req, res, next) => {
     const formData = req.body;
     const userid = req.params.id;
     const path = req.path;
     const colorQuery = req.query.color;
     console.log(req.method);
+
+    next()
 }
 ```
 
@@ -111,17 +112,37 @@ app.use(bodyParser.json())
 @[11](Relative elérési út)
 @[12](Query paraméterek pl. ?color=black)
 @[13](A kérés HTTP metódusa)
+@[15]
 @snapend
 
 +++
 
 ### Response objektum
 
-kód
+```js
+//Valami middleware
+const myMiddleware = (req, res, next) => {
+    const myCat = { name: 'Miau', age: '2' } 
+    res.json(myCat);
+    res.status(200);
+    res.send('Express is so easy, OMG!!');
+    res.redirect('/youaredumb');
 
-+++
+    res.append('Bearer', myToken);
+    res.cookie(...cookie);
 
-### A next() függvény
+    next();
+}
+```
+
+@snap[south]
+@[3,4]
+@[5]
+@[6]
+@[7]
+@[9,10]
+@[12]
+@snapend
 
 ---
 
@@ -129,7 +150,15 @@ kód
 
 +++
 
-Kód
+
+```js
+const myMiddleware = (err, req, res, next) => {
+    if(err){
+        res.status(500);
+        res.send('Hoopsie Woopsie!');
+    }
+}
+```
 
 ---
 
@@ -151,14 +180,87 @@ Kód
 
 @ul
 - ODM könyvtár
-- JavaScript objektumok mappelése
-- MongoDB kezelése
+- JavaScript objektumok mappelés
+- MongoDB kezelés
 @ulend
 
 +++
 
-Kód
+```js
+const mongoose = require('mongoose');
+mongoose.connect('mongodb://localhost:27017/test',
+{useNewUrlParser: true, useUnifiedTopology: true});
+```
 
++++
+
+#### Séma és modell
+
+```js
+import mongoose from 'mongoose';
+
+const catSchema = new mongoose.Schema({
+    name:  String, // String is shorthand for {type: String}
+    age: Number,
+    owner:   mongoose.Schema.Types.ObjectId,
+    favoriteFood: { name: String, producing: String },
+  });
+
+export default const Cat = mongoose.model('Cat', catSchema);
+
+```
+
+
++++
+
+```ts
+//TypeScript interface
+import { model, Document } from 'mongoose';
+import { IUser } from 'models/User';
+
+interface ICat extends Document {
+    name: string;
+    age: number;
+    owner: IUser[_id];
+    favoriteFood: { name: string, producing: string };
+}
+
+export default model<ICat>('Cat', catSchema);
+```
+
++++
+
+#### Modell használata
+
+```js
+import Cat from 'models/Cat';
+
+const myMiddleware = (err, req, res, next) => {
+    const Cat = new Cat();
+    Cat.name = 'Garfield';
+    Cat.favoriteFood = { name: 'Lasagne', producing: 'Nyau Inc.'}
+    Cat.save((err, item) => {
+        if(!err){
+            res.send(item);
+        }
+    });
+
+    Cat.findOne({name: 'Garfield'}, (err, item) => {
+        if(!err){
+            console.log(item);
+        }
+    });
+
+    Cat.deleteOne({name: 'Garfield'}, (err) => {
+        if(!err){
+            res.status(204).send();
+        }
+    });
+}
+```
+
+@[4-11]
+@[13-17]
+@[19-23]
 ---
-
 
