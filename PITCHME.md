@@ -37,24 +37,24 @@
 
 --- 
 
-## Express
+# Express
 A legnépszerűbb Node alapú backend keretrendszer
 
 ---
 
-### Egyszerű, gyors és skálázható webalkalmazások
+## Egyszerű, gyors és skálázható webalkalmazások
 
-#### Fő építő elemei:
+### Fő építő elemei:
  - Útvonal választás
  - Middleware függvények
 
 --- 
 
-### App objektum és a routing
+## App objektum és a routing
 
 +++
 @snap[north snap-40]
-### A szerver indítása
+## A szerver indítása
 @snapend
 
 ```js 
@@ -101,7 +101,7 @@ app.delete('/user/:id', middlewareA(), middlewareB());
 @ulend
 +++
 @snap[north snap-40]
-### Request
+## Request
 @snapend
 
 ```js
@@ -135,7 +135,7 @@ const myMiddleware = (req, res, next) => {
 
 +++
 @snap[north snap-40]
-### Response
+## Response
 @snapend
 
 ```js
@@ -165,7 +165,7 @@ const myMiddleware = (req, res, next) => {
 
 ---
 @snap[north snap-40]
-### Hibakezelés
+## Hibakezelés
 @snapend
 ```js
 const myMiddleware = (err, req, res, next) => {
@@ -182,13 +182,13 @@ const myMiddleware = (err, req, res, next) => {
 
 ---
 
-## Perzisztens adattárolás MongoDB-vel
+# Perzisztens adattárolás MongoDB-vel
 
 ![mongo](assets/images/mongo.png)
 
 ---
 @snap[north snap-40]
-### Fő tulajdonságai
+## Fő tulajdonságai
 @snapend
 
 @ul[list-square-bullets list-spaced-bullets font-righteous]
@@ -199,7 +199,7 @@ const myMiddleware = (err, req, res, next) => {
 @ulend
 ---
 @snap[north snap-40]
-### Mongoose package
+## Mongoose package
 @snapend
 
 @ul[list-square-bullets list-spaced-bullets font-righteous]
@@ -214,7 +214,7 @@ const myMiddleware = (err, req, res, next) => {
 +++
 
 @snap[north snap-40]
-### Kapcsolódás
+## Kapcsolódás
 @snapend
 
 ```js
@@ -226,7 +226,7 @@ mongoose.connect('mongodb://localhost:27017/test',
 
 +++
 @snap[north snap-40]
-### Séma és modell
+## Séma és modell
 @snapend
 ```js
 import mongoose from 'mongoose';
@@ -244,7 +244,7 @@ export default const Cat = mongoose.model('Cat', catSchema);
 
 +++
 @snap[north snap-40]
-### TypeScript + mongoose
+## TypeScript + mongoose
 @snapend
 ```ts
 //TypeScript interface
@@ -263,7 +263,7 @@ export default model<ICat>('Cat', catSchema);
 
 +++
 @snap[north snap-40]
-### Modell használata
+## Modell használata
 @snapend
 ```js
 import Cat from 'models/Cat';
