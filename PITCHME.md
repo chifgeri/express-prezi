@@ -94,7 +94,7 @@ app.delete('/user/:id', middlewareA(), middlewareB());
 
 +++
 @ul[list-square-bullets list-spaced-bullets font-righteous]
-- Egyszerű feladat
+- Általában egy feladat
 - Kérés és válasz kezelése
 - Láncolható
 - Visszatérhet vagy továbbmehet
