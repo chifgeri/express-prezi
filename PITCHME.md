@@ -7,17 +7,15 @@
 
 ---
 
+@snap[midpoint span-50]
 ![express-mongo-node](assets/images/express-mongo.jpg)
+@snapend
 
 ---
 
 @snap[midpoint span-50]
 ![node](assets/images/nodejs.svg)
 @snapend
-
-+++
-
-![nodememe](assets/images/nodememe.png)
 
 ---
 
@@ -30,6 +28,12 @@
 * V8 motor
 * Event-loop és aszinkron I/O
 @ulend
+
++++
+
+@snap[midpoint span-50]
+![nodememe](assets/images/nodememe.png)
+@snapend
 
 --- 
 
